@@ -1,0 +1,43 @@
+# ============================================================
+# Startup Selector 設定ファイル (TOML風の簡易フォーマット)
+# 文字コードは UTF-8 で保存してください（メモ帳の場合「UTF-8」を選択）。
+# ============================================================
+
+# 見出し文言（省略可）
+title = "起動するアプリを選択してください"
+
+# 何も選択せずに経過すると自動起動するまでの秒数
+timeout_seconds = 10
+
+# タイムアウト時に自動起動するアプリ名（下の [[apps]] の name のどれかと一致させる）
+default_app = "Slack"
+
+# ------------------------------------------------------------
+# 選択肢にするアプリを [[apps]] ブロックで並べる（いくつでも追加可）
+# path は .exe への直接パスでも、スタートメニューの .lnk ショートカットの
+# パスでもOKです（コピー＆貼り付けしやすい方でどうぞ）。
+#
+# Windowsのパスは '（シングルクォート）' で囲むと、バックスラッシュを
+# そのまま書けます（\\ のように二重にする必要がありません）。
+# ------------------------------------------------------------
+
+[[apps]]
+name = "Slack"
+path = 'C:\Users\hiro\AppData\Local\Programs\slack\slack.exe'
+args = ""
+
+[[apps]]
+name = "Discord"
+path = 'C:\Users\hiro\AppData\Local\Discord\Update.exe'
+args = "--processStart Discord.exe"
+
+[[apps]]
+name = "Google Chrome"
+path = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
+args = ""
+
+# 例: スタートメニューのショートカットを直接指定する場合
+# [[apps]]
+# name = "メモ帳"
+# path = 'C:\Users\hiro\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Accessories\メモ帳.lnk'
+# args = ""
